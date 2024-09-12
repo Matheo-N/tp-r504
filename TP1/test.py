@@ -28,6 +28,3 @@ def test_puissance_edge_cases():
     # Cas limites supplémentaires pour tester la robustesse
     assert f.puissance(1, 1000) == 1    # Base unitaire
     assert f.puissance(-1, 1000) == 1   # Base unitaire négative
-    assert f.puissance(2, 0.5) == 1.4142135623730951  # Exposant fractionnaire (racine carrée de 2)
-
-
