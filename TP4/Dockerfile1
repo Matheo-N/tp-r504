@@ -18,4 +18,4 @@ COPY index.html /srv/templates/
 COPY app_1.py /srv/
 
 # Commande pour lancer l'application Flask
-CMD ["flask", "--app", "/srv/app1", "run", "--host=0.0.0.0"]
+CMD ["flask", "--app", "/srv/app_1", "run", "--host=0.0.0.0"]
