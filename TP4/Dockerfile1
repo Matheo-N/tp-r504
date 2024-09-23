@@ -1,0 +1,21 @@
+# Utilisez Debian 11 comme base
+FROM debian:11
+
+# Met à jour les listes de paquets et installe les mises à jour
+RUN apt-get update && apt-get upgrade -y
+
+# Installe les paquets requis
+RUN apt-get install -y build-essential pkg-config python-dev python3-pip default-libmysqlclient-dev
+
+# Met à jour pip
+RUN pip3 install --upgrade pip
+
+# Installe les paquets Python
+RUN pip3 install flask-mysqldb mysql-connector-python
+
+# Crée le répertoire et copie les fichiers
+COPY index.html /srv/templates/
+COPY app_1.py /srv/
+
+# Commande pour lancer l'application Flask
+CMD ["flask", "--app", "/srv/app1", "run", "--host=0.0.0.0"]
