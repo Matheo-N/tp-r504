@@ -1,0 +1,21 @@
+# Utiliser une image de base de Python
+FROM python:3.9-slim
+
+# Définir le répertoire de travail
+WORKDIR /srv
+
+# Copier le fichier requirements.txt
+COPY requirements.txt .
+
+# Installer les dépendances
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copier le code de l'application
+COPY srv/ .
+
+# Exposer le port
+EXPOSE 5000
+
+# Commande pour lancer l'application
+CMD ["python", "app_1.py"]
+
