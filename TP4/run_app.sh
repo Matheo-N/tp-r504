@@ -22,7 +22,7 @@ function stop_container() {
 stop_container
 
 # Lance le conteneur
-docker run \
+docker run -d \
   --name $CONTAINER_NAME \
   --network $NETWORK_NAME \
   -p $PORT:$PORT \

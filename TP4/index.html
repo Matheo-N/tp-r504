@@ -1,19 +1,22 @@
 <html>
 <head>
-<title>Demo sql query in table</title>
+    <title>Demo sql query in table</title>
 </head>
 <body>
 
-Table:
-<table>
-{% for row in data %}
-<tr>
-    {% for item in row %}
-      <td>{{ item }}</td>
-    {% endfor %}
-</tr>
-{% endfor %}
-</table>
+<h2>Formulaire d'inscription</h2>
+
+<form action="/newuser/" method="POST">
+    <label for="username">Identifiant :</label>
+    <input type="text" id="username" name="username" required>
+    <button type="submit">Envoyer</button>
+</form>
+
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+
+
 </body>
 </html>
 
