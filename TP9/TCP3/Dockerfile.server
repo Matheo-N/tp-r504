@@ -1,0 +1,18 @@
+# Dockerfile pour le serveur
+FROM openjdk:11-jdk-slim
+
+# Créer un répertoire pour l'application
+WORKDIR /app
+
+# Copier le fichier ServeurTCP3.java dans le conteneur
+COPY ServeurTCP3.java .
+
+# Compiler le code Java
+RUN javac ServeurTCP3.java
+
+# Exposer le port 2016
+EXPOSE 2016
+
+# Commande pour exécuter le serveur
+CMD ["java", "ServeurTCP3"]
+

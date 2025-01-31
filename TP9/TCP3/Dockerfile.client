@@ -1,0 +1,15 @@
+# Dockerfile pour le client
+FROM openjdk:11-jdk-slim
+
+# Créer un répertoire pour l'application
+WORKDIR /app
+
+# Copier le fichier ClientTCP3.java dans le conteneur
+COPY ClientTCP3.java .
+
+# Compiler le code Java
+RUN javac ClientTCP3.java
+
+# Exécuter le client avec un message
+CMD ["sh", "-c", "sleep 5 && java ClientTCP3 'Bonjour le serveur!'"]
+
